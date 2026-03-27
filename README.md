@@ -30,7 +30,7 @@ Nossa equipe é composta por quatro estudantes, com os seguintes papéis definid
 
 * **[Felipe Damasceno]:** [Coleta e Pré-processamento de Dados] - *Responsável pela extração dos dados do GeoSampa, tratamento de dados nulos/inválidos, e engenharia de features básicas.* (Papel: Data)
 * **[Luís Henrique Emediato]:** [Engenharia de Features e Modelagem] - *Responsável por criar variáveis geoespaciais avançadas (ex: distâncias), selecionar features, treinar e otimizar os modelos de ML.* (Papel: Model)
-* **[Matheus Antinossi]:** [Avaliação e Análise de Métricas] - *Responsável por definir e medir as métricas de performance (ex: MAE, RMSE, R² para regressão), validar o modelo e analisar o overfitting.* (Papel: Eval)
+* **[Mateus Antinossi]:** [Avaliação e Análise de Métricas] - *Responsável por definir e medir as métricas de performance (ex: MAE, RMSE, R² para regressão), validar o modelo e analisar o overfitting.* (Papel: Eval)
 * **[Raiza Wunsch]:** [Desenvolvimento do Dashboard e Visualização] - *Responsável por integrar as predições do modelo em um dashboard interativo e criar as visualizações de dados para a review da sprint.* (Papel: Visualization)
 
 
@@ -40,7 +40,7 @@ Para a implementação do pipeline, utilizaremos as seguintes tecnologias:
 
 * **Gerenciamento de Projeto:** GitHub (incluindo GitHub Projects para o backlog).
 * **Linguagem Principal:** Python.
-* **Manipulação de Dados e Geo: ** Pandas, NumPy, [Geopandas (para arquivos .shp do GeoSampa)].
+* **Manipulação de Dados e Geo:** Pandas, NumPy, [Geopandas (para arquivos .shp do GeoSampa)].
 * **Machine Learning:** Scikit-learn, [a considerar: XGBoost ou LightGBM para maior performance em dados tabulares].
 * **Visualização:** Matplotlib, Seaborn, Plotly.
 * **Dashboarding:** [Streamlit] ou [Dash].
