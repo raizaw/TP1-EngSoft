@@ -10,7 +10,7 @@ A viabilidade do modelo será testada através das seguintes hipóteses, vincula
 * (1) A proximidade a estações de transporte público e grandes áreas verdes impacta positivamente e quantificavelmente o valor por metro quadrado;
 * (2) O tipo de zoneamento urbano exerce uma influência significativa e mensurável na valorização imobiliária;
 * (3) A integração de características estruturais dos lotes com variáveis socioeconômicas da região (como indicadores sociodemográficos do setor censitário) permite gerar predições com acurácia satisfatória.
-* (4) A presença de infraestruturas urbanas de grande impacto, como linhas de alta tensão ou torres de transmissão, exerce uma influência negativa e detectável no valor venal de lotes adjacentes.
+* (4) A presença de pontos culturais próximos, como museus, teatros ou cinemas, exerce uma influência positiva e detectável no valor venal de lotes.
 
 O resultado final será um dashboard interativo para visualização das análises e previsões do modelo, simulando uma demanda real do mercado imobiliário urbano.]
 
