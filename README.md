@@ -47,6 +47,76 @@ Para a implementação do pipeline, utilizaremos as seguintes tecnologias:
 * **Dashboarding:** [Streamlit] ou [Dash].
 * **[Opcional] Outros:** [Docker (para reprodutibilidade do pipeline)].
 
+
+## Arquitetura e Modelagem do Pipeline (Diagramas UML)
+
+Para documentar a estrutura e o funcionamento do nosso pipeline de dados, utilizamos a abordagem de UML como esboço (*sketches*).
+
+### 1. Diagrama de Componentes / Arquitetura do Pipeline
+Este diagrama explicita a arquitetura geral do projeto, mostrando como os dados fluem desde a extração até a visualização no dashboard.
+
+```mermaid
+flowchart TD
+    subgraph Dados [Fontes de Dados]
+        A[(Arquivo Parquet: IPTU)]
+        B[(Arquivos ZIP: IPVS, Cultura)]
+    end
+
+    subgraph Processamento [Processamento Geoespacial e ETL]
+        C[Geoprocessamento <br> Pandas/GeoPandas]
+        D[Spatial Join e Limpeza]
+    end
+
+    subgraph Analytics [Motor Analítico e Machine Learning]
+        E[Testes Estatísticos: <br> SciPy/Statsmodels]
+        F[Modelo Preditivo: <br> Random Forest]
+    end
+    
+    subgraph Exportacao [Integração]
+        G[(Exportação de Resultados <br> e Predições)]
+    end
+
+    subgraph App [Interface do Usuário / Dashboard]
+        H[Dashboard Interativo: <br> Streamlit]
+        I[Mapas Interativos: Folium]
+    end
+
+    Dados -.-> Processamento
+    Processamento -.-> Analytics
+    Analytics -.-> Exportacao
+    Exportacao -.-> App
+````
+### 2. Diagrama de Atividades do Pipeline de Modelagem
+Este diagrama detalha o passo a passo da execução do script, mapeando o ciclo de vida do dado até a exportação das predições.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Carregar_Dados
+    Carregar_Dados: Carregar Arquivos <br> GeoParquet e Shapefiles <br> (Cultura/IPVS)
+    
+    Carregar_Dados --> Unificar_Bases
+    Unificar_Bases: Realizar Spatial Join <br> e Limpeza
+    
+    Unificar_Bases --> Transformar_Dados
+    Transformar_Dados: Engenharia de Features <br> (Logs, Dummies, Binning)
+    
+    Transformar_Dados --> Divisao_Treino_Teste
+    Divisao_Treino_Teste: Separar dados de <br> treino e teste
+    
+    Divisao_Treino_Teste --> Treinar_Modelo
+    Treinar_Modelo: Ajustar Random <br> Forest Regressor
+    
+    Treinar_Modelo --> Avaliar_Metricas
+    Avaliar_Metricas: Avaliar performance <br> (R² e MAE)
+    
+    Avaliar_Metricas --> Exportar_Predicoes
+    Exportar_Predicoes: Exportar predições e <br> resultados consolidados
+    
+    Exportar_Predicoes --> Renderizar_Dashboard
+    Renderizar_Dashboard: Consumir predições e exibir<br>no Streamlit/Folium
+    
+    Renderizar_Dashboard --> [*]
+```
 ## Resultado final
 
 Por fim, guardamos todo o pipeline e nossas contribuições em um arquivo .ipynb, construído pela plataforma do google colab.
