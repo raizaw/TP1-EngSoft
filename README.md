@@ -22,6 +22,7 @@ Para cumprir o requisito de utilizar dados reais, selecionamos o seguinte conjun
 * **Origem:** [GeoSampa (Portal de Dados Abertos da Prefeitura de São Paulo)](http://geosampa.prefeitura.sp.gov.br/).
 * **Tamanho Estimado:** [Milhões de registros de lotes (o tamanho exato depende do recorte temporal e geográfico, mas será um dataset robusto, exigindo técnicas de chunking ou processamento eficiente em memória, como Pandas/Polars)].
 * **Quantidade de Features (Candidatas):** [Prevemos o uso de 15 a 25 features em potencial, incluindo características estruturais (área do lote, ano de construção), dados de localização (coordenadas geográficas, bairro), tipo de zoneamento, e variáveis derivadas de proximidade a pontos de interesse (distância a metrô, parques, etc.)].
+* **Link de acesso:** após o tratamento dos dados e o pré-processamento, juntamos todos os arquivos de dados geográficos em uma pasta (disponível em: https://drive.google.com/drive/folders/1qcVWBsWLmns70TuhJ26zZHQisR9uXHbb).
 
 
 ## Membros da Equipe e Papéis
@@ -46,3 +47,7 @@ Para a implementação do pipeline, utilizaremos as seguintes tecnologias:
 * **Dashboarding:** [Streamlit] ou [Dash].
 * **[Opcional] Outros:** [Docker (para reprodutibilidade do pipeline)].
 
+## Resultado final
+
+Por fim, guardamos todo o pipeline e nossas contribuições em um arquivo .ipynb, construído pela plataforma do google colab.
+* **Disponível em:**  https://colab.research.google.com/drive/1KBeIfDHz6LHlR_w6nuf11l5mYA685auf?usp=sharing
